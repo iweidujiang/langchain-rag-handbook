@@ -1,0 +1,13 @@
+{
+  "name": "00-concepts",
+  "version": "1.0.0",
+  "description": "第0篇：AI 应用开发核心概念地图 —— 在写代码之前，先建立全局认知",
+  "type": "module",
+  "scripts": {
+    "demo": "node src/concept-tour.mjs"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.0",
+    "@langchain/openai": "^0.3.0"
+  }
+}
