@@ -1,0 +1,15 @@
+{
+  "name": "01-getting-started",
+  "version": "1.0.0",
+  "description": "第1篇：用 10 行代码让大模型替你干活 —— LangChain 入门与环境搭建",
+  "type": "module",
+  "scripts": {
+    "basic": "node src/basic-chat.mjs",
+    "stream": "node src/streaming-chat.mjs",
+    "multi": "node src/multi-turn-chat.mjs"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.0",
+    "@langchain/openai": "^0.3.0"
+  }
+}

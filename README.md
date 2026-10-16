@@ -17,8 +17,8 @@
 | 全栈框架 | Next.js 14+ (App Router) |
 | 运行时 | Node.js 20+ |
 | 向量数据库 | ChromaDB（主） / FAISS（辅） |
-| 大模型 | OpenAI GPT-4o / GPT-4o-mini |
-| Embedding | OpenAI text-embedding-3-small |
+| 大模型 | DeepSeek / OpenAI 兼容接口 |
+| Embedding | DeepSeek Embedding / text-embedding-3-small |
 | 评估 | Ragas |
 | 部署 | Vercel / Docker |
 
@@ -28,8 +28,7 @@
 
 - **Node.js** >= 20.0.0（推荐 20 LTS）
 - **npm** >= 10.0.0
-- **OpenAI API Key**（或兼容的模型接口）
-- **ChromaDB**（第 5 篇起需要，可通过 Docker 运行）
+- **DeepSeek API Key**（或其他 OpenAI 兼容接口）
 
 ### 安装与运行
 
@@ -46,7 +45,7 @@ npm install
 
 # 4. 配置环境变量
 cp .env.example .env
-# 编辑 .env，填入你的 OPENAI_API_KEY
+# 编辑 .env，填入你的 API Key
 
 # 5. 运行
 npm run start
@@ -54,47 +53,43 @@ npm run start
 
 ## 篇目导航
 
-| 篇号 | 标题                                           | 目录 | 难度 |
-|------|----------------------------------------------|------|------|
+| 篇号 | 标题 | 目录 | 难度 |
+|------|------|------|------|
 | 00 | AI 应用开发的核心概念地图：Prompt、Chain、Agent、RAG 到底在说什么 | [`00-concepts/`](./00-concepts/) | ★☆☆ |
-| 01 | 用 10 行代码让大模型替你干活：LangChain 入门与环境搭建           | [`01-getting-started/`](./01-getting-started/) | ★☆☆ |
-| 02 | 规划中                                          |  |  |
+| 01 | 用 10 行代码让大模型替你干活：LangChain 入门与环境搭建 | [`01-getting-started/`](./01-getting-started/) | ★☆☆ |
 
 ## 环境准备
 
-### OpenAI API
+### DeepSeek API
 
-1. 前往 [OpenAI Platform](https://platform.openai.com/) 注册并获取 API Key
+1. 前往 [DeepSeek 开放平台](https://platform.deepseek.com/) 注册并获取 API Key
 2. 确保账户有足够额度
 3. 将 API Key 填入各篇目录下的 `.env` 文件
 
-如果你使用兼容 OpenAI 接口的服务（如国内中转站），可以在 `.env` 中修改 `OPENAI_BASE_URL`。
+本合集使用 OpenAI 兼容接口格式，DeepSeek 的接口完全兼容，只需配置：
 
-### ChromaDB（第 5 篇起需要）
-
-```bash
-# 使用 Docker 运行 ChromaDB
-docker run -d -p 8000:8000 --name chromadb chromadb/chroma
+```env
+OPENAI_API_KEY=sk-your-deepseek-key
+OPENAI_BASE_URL=https://api.deepseek.com
+OPENAI_MODEL=deepseek-flash
 ```
+
+如果你使用其他 OpenAI 兼容服务，修改 `OPENAI_BASE_URL` 为对应地址即可。
 
 ### Ollama（可选，本地模型替代方案）
 
 ```bash
 # 安装 Ollama: https://ollama.com
-ollama pull llama3
+ollama pull deepseek-r1
 ```
 
-部分示例提供 Ollama 本地模型的替代写法，无需 OpenAI API Key 也可运行。
+部分示例提供 Ollama 本地模型的替代写法，无需 API Key 也可运行。
 
 ## 常见问题
 
 ### API Key 不生效？
 
 确保 `.env` 文件在正确目录下，且变量名拼写无误。运行 `echo $OPENAI_API_KEY`（Linux/Mac）或 `echo %OPENAI_API_KEY%`（Windows）检查。
-
-### ChromaDB 连接失败？
-
-确认 Docker 容器正在运行：`docker ps | grep chroma`。确认端口 8000 未被占用。
 
 ### Node.js 版本不对？
 

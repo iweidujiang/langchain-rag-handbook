@@ -12,7 +12,7 @@ import { tool } from "@langchain/core/tools";
 import "dotenv/config";
 
 const model = new ChatOpenAI({
-  model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+  model: process.env.OPENAI_MODEL || "deepseek-chat",
   temperature: 0,
 });
 
