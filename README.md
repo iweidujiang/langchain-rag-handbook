@@ -1,6 +1,6 @@
 # LangChain RAG Handbook
 
-> 《AI 应用开发实战：从 LangChain 入门到企业级 RAG 落地》配套代码 —— 10 个可运行 Demo，从 LangChain 入门到企业级 RAG 系统落地。
+> 《AI 应用开发实战：从 LangChain 入门到企业级 RAG 落地》配套代码 —— 从 LangChain 入门到企业级 RAG 系统落地。
 
 ## 合集介绍
 
@@ -54,19 +54,11 @@ npm run start
 
 ## 篇目导航
 
-| 篇号 | 标题 | 目录 | 难度 |
-|------|------|------|------|
+| 篇号 | 标题                                           | 目录 | 难度 |
+|------|----------------------------------------------|------|------|
 | 00 | AI 应用开发的核心概念地图：Prompt、Chain、Agent、RAG 到底在说什么 | [`00-concepts/`](./00-concepts/) | ★☆☆ |
-| 01 | 用 10 行代码让大模型替你干活：LangChain 入门与环境搭建 | [`01-getting-started/`](./01-getting-started/) | ★☆☆ |
-| 02 | 别再裸写 Prompt 了：模板化、结构化与输出解析 | [`02-prompt-and-output/`](./02-prompt-and-output/) | ★☆☆ |
-| 03 | 把多个能力串起来：Chain 组合与 LCEL 管道 | [`03-chain-and-lcel/`](./03-chain-and-lcel/) | ★★☆ |
-| 04 | 让 AI 学会使用工具：Tool 与 Agent 实战 | [`04-tools-and-agent/`](./04-tools-and-agent/) | ★★☆ |
-| 05 | 让 AI 读懂你的私有文档：RAG 入门与向量数据库 | [`05-rag-basics/`](./05-rag-basics/) | ★★☆ |
-| 06 | 检索质量决定上限：高级 RAG 技巧全解析 | [`06-advanced-rag/`](./06-advanced-rag/) | ★★★ |
-| 07 | 多模态 RAG：让 AI 同时理解文字和图片 | [`07-multimodal-rag/`](./07-multimodal-rag/) | ★★★ |
-| 08 | 用 LangGraph 构建智能工作流：从单轮问答到多步推理 | [`08-langgraph-workflow/`](./08-langgraph-workflow/) | ★★★ |
-| 09 | 你的 RAG 到底好不好？评估体系搭建实战 | [`09-evaluation/`](./09-evaluation/) | ★★☆ |
-| 10 | 从本地到线上：企业级 RAG 系统部署与监控 | [`10-deployment/`](./10-deployment/) | ★★★ |
+| 01 | 用 10 行代码让大模型替你干活：LangChain 入门与环境搭建           | [`01-getting-started/`](./01-getting-started/) | ★☆☆ |
+| 02 | 规划中                                          |  |  |
 
 ## 环境准备
 
