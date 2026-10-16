@@ -89,15 +89,16 @@ console.log("Tool 调用结果：", toolResult, "\n");
 // ============================================================
 console.log("=== 概念 5：Embedding ===\n");
 
-const { OpenAIEmbeddings } = await import("@langchain/openai");
-const embeddings = new OpenAIEmbeddings({
-  model: "text-embedding-3-small",
-});
+// 注意：DeepSeek 目前不提供 Embedding API，这里用模拟数据演示概念
+// 实际项目中会使用 OpenAI text-embedding-3-small 或其他 Embedding 服务
+console.log("（演示概念：将文本转换为语义向量）\n");
 
-const vector = await embeddings.embedQuery("人工智能正在改变世界");
-console.log(`Embedding 维度：${vector.length} 维`);
-console.log(`前 5 个值：[${vector.slice(0, 5).map((v) => v.toFixed(4)).join(", ")} ...]`);
-console.log("（每个数字代表文本在某个语义维度上的坐标）\n");
+const mockVector = [0.1234, -0.5678, 0.9012, -0.3456, 0.7890, -0.2345, 0.6789, -0.0123];
+console.log("文本：\"人工智能正在改变世界\"");
+console.log(`Embedding 维度：1536 维（OpenAI text-embedding-3-small）`);
+console.log(`前 5 个值：[${mockVector.slice(0, 5).map((v) => v.toFixed(4)).join(", ")} ...]`);
+console.log("（每个数字代表文本在某个语义维度上的坐标）");
+console.log("（语义相近的文本，向量值也会接近）\n");
 
 // ============================================================
 // 总结
