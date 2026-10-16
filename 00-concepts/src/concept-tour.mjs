@@ -9,6 +9,7 @@ import {
 } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { tool } from "@langchain/core/tools";
+import { z } from "zod";
 import "dotenv/config";
 
 const model = new ChatOpenAI({
@@ -72,6 +73,9 @@ const weatherTool = tool(
   {
     name: "get_weather",
     description: "查询指定城市的实时天气信息",
+    schema: z.object({
+      city: z.string().describe("要查询天气的城市名称"),
+    }),
   }
 );
 

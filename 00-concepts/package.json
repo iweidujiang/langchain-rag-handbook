@@ -9,6 +9,7 @@
   "dependencies": {
     "@langchain/core": "^0.3.0",
     "@langchain/openai": "^0.3.0",
-    "dotenv": "^16.4.0"
+    "dotenv": "^16.4.0",
+    "zod": "^3.22.0"
   }
 }
