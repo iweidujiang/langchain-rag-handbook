@@ -1,0 +1,17 @@
+{
+  "name": "02-prompt-and-output",
+  "version": "1.0.0",
+  "description": "第2篇：别再裸写 Prompt 了 —— 模板化、结构化与输出解析",
+  "type": "module",
+  "scripts": {
+    "template": "node src/prompt-template.mjs",
+    "chat": "node src/chat-prompt.mjs",
+    "extract": "node src/structured-extract.mjs"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.0",
+    "@langchain/openai": "^0.3.0",
+    "dotenv": "^16.4.0",
+    "zod": "^3.22.0"
+  }
+}
