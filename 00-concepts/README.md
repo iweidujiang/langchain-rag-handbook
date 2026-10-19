@@ -33,4 +33,4 @@ src/
 
 ## 延伸阅读
 
-→ [第1篇：用 10 行代码让大模型替你干活](../01-getting-started/)
+→ [第1篇：用 10 行代码让大模型替你干活](https://mp.weixin.qq.com/s/yaMhnWliBzebEnzOrT2eCQ)
