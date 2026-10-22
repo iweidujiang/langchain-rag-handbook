@@ -13,7 +13,7 @@ import { z } from "zod";
 import "dotenv/config";
 
 const model = new ChatOpenAI({
-  model: process.env.OPENAI_MODEL || "deepseek-chat",
+  model: process.env.OPENAI_MODEL || "deepseek-flash",
   temperature: 0,
 });
 

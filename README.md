@@ -58,6 +58,7 @@ npm run start
 | 00 | AI 应用开发的核心概念地图：Prompt、Chain、Agent、RAG 到底在说什么 | [`00-concepts/`](./00-concepts/) | ★☆☆ |
 | 01 | 用 10 行代码让大模型替你干活：LangChain 入门与环境搭建 | [`01-getting-started/`](./01-getting-started/) | ★☆☆ |
 | 02 | 别再裸写 Prompt 了：模板化、结构化与输出解析 | [`02-prompt-and-output/`](./02-prompt-and-output/) | ★☆☆ |
+| 03 | 从单条 Prompt 到多步流水线：LangChain Chain + LCEL + Runnable 实战 | [`03-chain-and-lcel/`](./03-chain-and-lcel/) | ★★☆ |
 
 ## 环境准备
 

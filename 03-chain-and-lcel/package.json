@@ -1,0 +1,17 @@
+{
+  "name": "03-chain-and-lcel",
+  "version": "1.0.0",
+  "description": "第3篇：从单条 Prompt 到多步流水线 —— LangChain Chain + LCEL + Runnable",
+  "type": "module",
+  "scripts": {
+    "chain": "node src/first-chain.mjs",
+    "pipeline": "node src/translation-pipeline.mjs",
+    "branch": "node src/conditional-branch.mjs"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.0",
+    "@langchain/openai": "^0.3.0",
+    "dotenv": "^16.4.0",
+    "zod": "^3.22.0"
+  }
+}
