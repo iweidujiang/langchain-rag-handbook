@@ -1,5 +1,6 @@
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers";
+import { RunnableSequence } from "@langchain/core/runnables";
 import { ChatOpenAI } from "@langchain/openai";
 import "dotenv/config";
 
@@ -26,11 +27,11 @@ const article = `LangChain 提供了 LCEL（LangChain Expression Language）作�
 并且自动获得流式输出、批量调用、异步并发、失败重试和可观测性等能力，
 而不需要为每一种能力单独编写胶水代码。`;
 
-// 写法一：显式 .pipe()
+// 写法一：链式 .pipe()
 const chain = summarizePrompt.pipe(model).pipe(new StringOutputParser());
 
-// 写法二：管道运算符，与写法一完全等价
-const chainAlt = summarizePrompt | model | new StringOutputParser();
+// 写法二：RunnableSequence.from(数组)，与写法一完全等价，步骤多时更好读
+const chainAlt = RunnableSequence.from([summarizePrompt, model, new StringOutputParser()]);
 
 console.log("=== 输入段落 ===");
 console.log(article.trim());
@@ -40,8 +41,14 @@ console.log("=== 一句话概括（.pipe 写法）===");
 console.log(await chain.invoke({ text: article }));
 console.log();
 
-console.log("=== 一句话概括（| 写法）===");
+console.log("=== 一句话概括（RunnableSequence 写法）===");
 console.log(await chainAlt.invoke({ text: article }));
+console.log();
+
+// 注意：JS 里没有管道运算符。Python 的 `prompt | model | parser` 直译过来是「按位或」，
+// 对象先被转成 NaN，再被位运算截成数字 0，于是后面 .invoke() 直接报 not a function。
+console.log("=== 反面演示：JS 的 | 是按位或 ===");
+console.log("summarizePrompt | model 的结果 =", summarizePrompt | model, "（类型：", typeof (summarizePrompt | model), "）");
 console.log();
 
 // ============================================================
