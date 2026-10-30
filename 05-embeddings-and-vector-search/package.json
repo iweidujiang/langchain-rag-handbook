@@ -1,0 +1,17 @@
+{
+  "name": "05-embeddings-and-vector-search",
+  "version": "1.0.0",
+  "description": "第5篇：从一堆文档到可检索知识库 —— 文本切分 + Embedding + 向量检索实战",
+  "type": "module",
+  "scripts": {
+    "chunk": "node src/chunking.mjs",
+    "similarity": "node src/similarity.mjs",
+    "kb": "node src/knowledge-base.mjs"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.0",
+    "@langchain/openai": "^0.3.0",
+    "@langchain/textsplitters": "^0.1.0",
+    "dotenv": "^16.4.0"
+  }
+}

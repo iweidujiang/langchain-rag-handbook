@@ -18,7 +18,7 @@
 | 运行时 | Node.js 20+ |
 | 向量数据库 | ChromaDB（主） / FAISS（辅） |
 | 大模型 | DeepSeek / OpenAI 兼容接口 |
-| Embedding | DeepSeek Embedding / text-embedding-3-small |
+| Embedding | Ollama bge-m3（本地，中文效果好）/ text-embedding-3-small |
 | 评估 | Ragas |
 | 部署 | Vercel / Docker |
 
@@ -60,6 +60,7 @@ npm run start
 | 02 | 别再裸写 Prompt 了：模板化、结构化与输出解析 | [`02-prompt-and-output/`](./02-prompt-and-output/) | ★☆☆ |
 | 03 | 从单条 Prompt 到多步流水线：LangChain Chain + LCEL + Runnable 实战 | [`03-chain-and-lcel/`](./03-chain-and-lcel/) | ★★☆ |
 | 04 | 从会说到会做：LangChain Tool + Agent + ReAct 循环实战 | [`04-tools-and-agents/`](./04-tools-and-agents/) | ★★☆ |
+| 05 | 从一堆文档到可检索知识库：文本切分 + Embedding + 向量检索实战 | [`05-embeddings-and-vector-search/`](./05-embeddings-and-vector-search/) | ★★★ |
 
 ## 环境准备
 
@@ -83,10 +84,13 @@ OPENAI_MODEL=deepseek-flash
 
 ```bash
 # 安装 Ollama: https://ollama.com
-ollama pull deepseek-r1
+ollama pull deepseek-r1     # 对话模型（可选替代方案）
+ollama pull bge-m3          # Embedding 模型（第 5 篇起需要，中文效果好，1024 维）
 ```
 
 部分示例提供 Ollama 本地模型的替代写法，无需 API Key 也可运行。
+
+Embedding 不走 DeepSeek：DeepSeek 不提供 `/v1/embeddings` 接口，本合集的向量化统一用本地 Ollama 的 `bge-m3`，或任意 OpenAI 兼容的 embedding 服务。
 
 ## 常见问题
 
