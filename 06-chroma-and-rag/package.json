@@ -1,0 +1,19 @@
+{
+  "name": "06-chroma-and-rag",
+  "version": "1.0.0",
+  "description": "第6篇：从检索到回答 —— ChromaDB + Retriever + RAG 流水线实战",
+  "type": "module",
+  "scripts": {
+    "chroma-store": "node src/chroma-store.mjs",
+    "rag": "node src/rag-chain.mjs",
+    "topk": "node src/topk-experiment.mjs"
+  },
+  "dependencies": {
+    "@langchain/community": "^0.3.59",
+    "@langchain/core": "^0.3.0",
+    "@langchain/openai": "^0.3.0",
+    "@langchain/textsplitters": "^0.1.0",
+    "chromadb": "^3.5.0",
+    "dotenv": "^16.4.0"
+  }
+}
